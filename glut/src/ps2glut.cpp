@@ -116,7 +116,8 @@ void glutInit(int* argcp, char** argv)
         *GIF::Registers::ctrl = 1;
 
         //      sceGsResetGraph(0, SCE_GS_INTERLACE, SCE_GS_NTSC, SCE_GS_FRAME);
-    	SetGsCrt(1 /* interlaced */, 2 /* ntsc */, 1 /* frame */);
+        graph_initialize(0, 640, 448, 0, 0, 0);
+        SetGsCrt(1 /* interlaced */, 2 /* ntsc */, 1 /* frame */);
 
         mWarn("ps2gl library has not been initialized by the user; using default values.");
         int immBufferVertexSize = 64 * 1024;
